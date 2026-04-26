@@ -1,23 +1,22 @@
 # Luminance: Crime Analysis Dashboard
 
-A sleek desktop dashboard for analyzing monthly crime review data. The app ingests the CSVs in `CSV/`, highlights alert-level category changes, visualizes incident trends, and exports a professional PDF report.
+This is my semester capstone project. It is a desktop dashboard that reads monthly crime review CSV files, highlights alert-level changes, shows a trend chart, and lets you export a PDF report.
 
-## Highlights
-- Interactive CustomTkinter UI with a modern dashboard layout.
-- Monthly alert detection based on percentage change thresholds.
-- Trend visualization with Matplotlib.
-- One-click PDF report generation.
-- Optional MongoDB connectivity (falls back to local-only mode).
+## What it does
+- Clean UI built with CustomTkinter.
+- Flags categories with big month-to-month changes.
+- Line chart for total incidents over time.
+- One-click PDF report export.
+- Tries MongoDB if available, but still runs without it.
 
-## Tech Stack
+## Tech stack
 - Python 3.x
 - CustomTkinter
 - Pandas, NumPy
 - Matplotlib
 - ReportLab
-- PyMongo (optional)
 
-## Project Structure
+## Folder layout
 ```
 .
 ├─ CSV/                     # Monthly crime review CSV files
@@ -33,7 +32,7 @@ A sleek desktop dashboard for analyzing monthly crime review data. The app inges
 ```
 
 ## Setup
-1. Create and activate a virtual environment (recommended).
+1. Create and activate a virtual environment.
 2. Install dependencies:
 
 ```bash
@@ -47,13 +46,13 @@ From the project root:
 python main/app.py
 ```
 
-## Data Notes
-- CSVs are read from the `CSV/` folder.
-- Alert threshold is set to 30% (see `ALERT_THRESHOLD` in `main/app.py`).
-- If MongoDB is unavailable, the app will continue in local-only mode.
+## Notes
+- CSVs are read from the CSV folder.
+- The alert threshold is 30% (see ALERT_THRESHOLD in main/app.py).
+- If MongoDB is not running, the app just uses local files.
 
-## Exported Reports
-Use the **EXPORT REPORT** button to generate a PDF summary of each month, including alert status and per-category deltas.
+## Report export
+Use the EXPORT REPORT button to generate a PDF summary for each month.
 
 ## Credits
-Created for a semester capstone project focused on public safety crime analytics.
+Made for a semester capstone on public safety crime analytics.
